@@ -1,0 +1,150 @@
+@prefix ent: <http://foundry-ontology.org/ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ent:Asset_asset_id a owl:DatatypeProperty ;
+    rdfs:domain ent:Asset ;
+    rdfs:range xsd:string .
+
+ent:Asset_asset_type a owl:DatatypeProperty ;
+    rdfs:domain ent:Asset ;
+    rdfs:range xsd:string .
+
+ent:Asset_inspection_date a owl:DatatypeProperty ;
+    rdfs:domain ent:Asset ;
+    rdfs:range xsd:date .
+
+ent:Asset_location a owl:DatatypeProperty ;
+    rdfs:domain ent:Asset ;
+    rdfs:range xsd:string .
+
+ent:Asset_name a owl:DatatypeProperty ;
+    rdfs:domain ent:Asset ;
+    rdfs:range xsd:string .
+
+ent:Asset_status a owl:DatatypeProperty ;
+    rdfs:domain ent:Asset ;
+    rdfs:range xsd:string .
+
+ent:MaintenanceEvent_event_id a owl:DatatypeProperty ;
+    rdfs:domain ent:MaintenanceEvent ;
+    rdfs:range xsd:string .
+
+ent:MaintenanceEvent_event_type a owl:DatatypeProperty ;
+    rdfs:domain ent:MaintenanceEvent ;
+    rdfs:range xsd:string .
+
+ent:MaintenanceEvent_scheduled_date a owl:DatatypeProperty ;
+    rdfs:domain ent:MaintenanceEvent ;
+    rdfs:range xsd:date .
+
+ent:MaintenanceEvent_sign_off_by a owl:DatatypeProperty ;
+    rdfs:domain ent:MaintenanceEvent ;
+    rdfs:range xsd:string .
+
+ent:MaintenanceEvent_status a owl:DatatypeProperty ;
+    rdfs:domain ent:MaintenanceEvent ;
+    rdfs:range xsd:string .
+
+ent:Pipeline_inspection_date a owl:DatatypeProperty ;
+    rdfs:domain ent:Pipeline ;
+    rdfs:range xsd:date .
+
+ent:Pipeline_name a owl:DatatypeProperty ;
+    rdfs:domain ent:Pipeline ;
+    rdfs:range xsd:string .
+
+ent:Pipeline_pipeline_id a owl:DatatypeProperty ;
+    rdfs:domain ent:Pipeline ;
+    rdfs:range xsd:string .
+
+ent:SensorReading_reading_id a owl:DatatypeProperty ;
+    rdfs:domain ent:SensorReading ;
+    rdfs:range xsd:string .
+
+ent:SensorReading_reading_type a owl:DatatypeProperty ;
+    rdfs:domain ent:SensorReading ;
+    rdfs:range xsd:string .
+
+ent:SensorReading_timestamp a owl:DatatypeProperty ;
+    rdfs:domain ent:SensorReading ;
+    rdfs:range xsd:dateTime .
+
+ent:SensorReading_value a owl:DatatypeProperty ;
+    rdfs:domain ent:SensorReading ;
+    rdfs:range xsd:float .
+
+ent:Technician_certification a owl:DatatypeProperty ;
+    rdfs:domain ent:Technician ;
+    rdfs:range xsd:string .
+
+ent:Technician_name a owl:DatatypeProperty ;
+    rdfs:domain ent:Technician ;
+    rdfs:range xsd:string .
+
+ent:Technician_tech_id a owl:DatatypeProperty ;
+    rdfs:domain ent:Technician ;
+    rdfs:range xsd:string .
+
+ent:WorkOrder_priority a owl:DatatypeProperty ;
+    rdfs:domain ent:WorkOrder ;
+    rdfs:range xsd:string .
+
+ent:WorkOrder_status a owl:DatatypeProperty ;
+    rdfs:domain ent:WorkOrder ;
+    rdfs:range xsd:string .
+
+ent:WorkOrder_wo_id a owl:DatatypeProperty ;
+    rdfs:domain ent:WorkOrder ;
+    rdfs:range xsd:string .
+
+ent:has_maintenance_events a owl:ObjectProperty ;
+    rdfs:label "Has Maintenance Events" ;
+    rdfs:domain ent:Asset ;
+    rdfs:range ent:MaintenanceEvent .
+
+ent:has_sensor_readings a owl:ObjectProperty ;
+    rdfs:label "Has Sensor Readings" ;
+    rdfs:domain ent:Asset ;
+    rdfs:range ent:SensorReading .
+
+ent:work_order_asset a owl:ObjectProperty ;
+    rdfs:label "Work Order Asset" ;
+    rdfs:domain ent:WorkOrder ;
+    rdfs:range ent:Asset .
+
+ent:work_order_technician a owl:ObjectProperty ;
+    rdfs:label "Work Order Technician" ;
+    rdfs:domain ent:WorkOrder ;
+    rdfs:range ent:Technician .
+
+ent:Inspectable a owl:Class ;
+    rdfs:label "Inspectable" .
+
+ent:Pipeline a owl:Class ;
+    rdfs:label "Pipeline" ;
+    rdfs:comment "A pipeline asset" ;
+    rdfs:subClassOf ent:Inspectable .
+
+ent:Technician a owl:Class ;
+    rdfs:label "Technician" ;
+    rdfs:comment "Maintenance technician" .
+
+ent:SensorReading a owl:Class ;
+    rdfs:label "Sensor Reading" ;
+    rdfs:comment "A sensor reading from an asset" .
+
+ent:WorkOrder a owl:Class ;
+    rdfs:label "Work Order" ;
+    rdfs:comment "A work order for maintenance" .
+
+ent:MaintenanceEvent a owl:Class ;
+    rdfs:label "Maintenance Event" ;
+    rdfs:comment "A maintenance event for an asset" .
+
+ent:Asset a owl:Class ;
+    rdfs:label "Physical Asset" ;
+    rdfs:comment "A physical asset (well, pump, compressor)" ;
+    rdfs:subClassOf ent:Inspectable .
+

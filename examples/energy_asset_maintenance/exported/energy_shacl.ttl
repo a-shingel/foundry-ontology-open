@@ -1,0 +1,67 @@
+@prefix ent: <http://foundry-ontology.org/ns#> .
+@prefix sh1: <https://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ent:ActionParam_CreateWorkOrder_priority a sh1:PropertyShape ;
+    sh1:in "CRITICAL",
+        "LOW",
+        "MEDIUM" .
+
+ent:ActionParam_EscalateAsset_priority a sh1:PropertyShape ;
+    sh1:in "CRITICAL",
+        "LOW",
+        "MEDIUM" .
+
+ent:Shape_Asset a sh1:NodeShape ;
+    sh1:property ent:Shape_Asset_asset_id,
+        ent:Shape_Asset_name ;
+    sh1:targetClass ent:Asset .
+
+ent:Shape_MaintenanceEvent a sh1:NodeShape ;
+    sh1:property ent:Shape_MaintenanceEvent_event_id ;
+    sh1:targetClass ent:MaintenanceEvent .
+
+ent:Shape_Pipeline a sh1:NodeShape ;
+    sh1:property ent:Shape_Pipeline_pipeline_id ;
+    sh1:targetClass ent:Pipeline .
+
+ent:Shape_SensorReading a sh1:NodeShape ;
+    sh1:property ent:Shape_SensorReading_reading_id ;
+    sh1:targetClass ent:SensorReading .
+
+ent:Shape_Technician a sh1:NodeShape ;
+    sh1:property ent:Shape_Technician_tech_id ;
+    sh1:targetClass ent:Technician .
+
+ent:Shape_WorkOrder a sh1:NodeShape ;
+    sh1:property ent:Shape_WorkOrder_wo_id ;
+    sh1:targetClass ent:WorkOrder .
+
+ent:Shape_Asset_asset_id a sh1:PropertyShape ;
+    sh1:minCount 1 ;
+    sh1:path ent:Asset_asset_id .
+
+ent:Shape_Asset_name a sh1:PropertyShape ;
+    sh1:minCount 1 ;
+    sh1:path ent:Asset_name .
+
+ent:Shape_MaintenanceEvent_event_id a sh1:PropertyShape ;
+    sh1:minCount 1 ;
+    sh1:path ent:MaintenanceEvent_event_id .
+
+ent:Shape_Pipeline_pipeline_id a sh1:PropertyShape ;
+    sh1:minCount 1 ;
+    sh1:path ent:Pipeline_pipeline_id .
+
+ent:Shape_SensorReading_reading_id a sh1:PropertyShape ;
+    sh1:minCount 1 ;
+    sh1:path ent:SensorReading_reading_id .
+
+ent:Shape_Technician_tech_id a sh1:PropertyShape ;
+    sh1:minCount 1 ;
+    sh1:path ent:Technician_tech_id .
+
+ent:Shape_WorkOrder_wo_id a sh1:PropertyShape ;
+    sh1:minCount 1 ;
+    sh1:path ent:WorkOrder_wo_id .
+
