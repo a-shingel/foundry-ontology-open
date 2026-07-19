@@ -1,6 +1,6 @@
 # Human Services Eligibility Case Study
 
-Government benefits eligibility domain (aligned with Cúram expertise):
+Government benefits eligibility domain:
 
 - **Object Types**: Client, Case, Benefit, EligibilityDetermination, Evidence
 - **Link Types**: Client→Cases, Case→Benefits, Case→Evidence
